@@ -1,9 +1,11 @@
 #include <iostream>
 #include <pthread.h>
 #include <unistd.h>
+#include "monitor.h"
 using namespace std;
 
 
+Monitor M;
 
 void* reader(void* id)
 {
@@ -13,9 +15,9 @@ void* reader(void* id)
     // each reader attempts to read 5 times
     while (c < 3) {
         sleep(0.1);
-        M.beginread(i);
+        M.beginread();
         sleep(2);
-        M.endread(i);
+        M.endread();
         c++;
     }
 }
@@ -28,31 +30,32 @@ void* writer(void* id)
     // each writer attempts to write 5 times
     while (c < 3) {
         sleep(0.1);
-        M.beginwrite(i);
+        M.beginwrite();
         sleep(2);
-        M.endwrite(i);
+        M.endwrite();
         c++;
     }
 }
 
-int main()
+int main(int argc, char *argv[])
 {
-    pthread_t r[5], w[5];
-    int id[5];
-    for (int i = 0; i < 5; i++) {
-        id[i] = i;
+    // pthread_t r[5], w[5];
+    // int id[5];
+    // for (int i = 0; i < 5; i++) {
+    //     id[i] = i;
 
-        // creating threads which execute reader function
-        pthread_create(&r[i], NULL, &reader, &id[i]);
+    //     // creating threads which execute reader function
+    //     pthread_create(&r[i], NULL, &reader, &id[i]);
 
-        // creating threads which execute writer function
-        pthread_create(&w[i], NULL, &writer, &id[i]);
-    }
+    //     // creating threads which execute writer function
+    //     pthread_create(&w[i], NULL, &writer, &id[i]);
+    // }
 
-    for (int i = 0; i < 5; i++) {
-        pthread_join(r[i], NULL);
-    }
-    for (int i = 0; i < 5; i++) {
-        pthread_join(w[i], NULL);
-    }
+    // for (int i = 0; i < 5; i++) {
+    //     pthread_join(r[i], NULL);
+    // }
+    // for (int i = 0; i < 5; i++) {
+    //     pthread_join(w[i], NULL);
+    // }
+    cout << "working!";
 }

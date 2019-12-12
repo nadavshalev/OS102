@@ -1,13 +1,47 @@
-class monitor {
-public:
-    monitor();
-    // can change the value of data
-    void beginread(int i);
 
-    void endread(int i);
+#ifndef _Monitor_
+#define _Monitor_
 
-    void beginwrite(int i);
+#include <iostream>
+#include <pthread.h>
+#include <unistd.h>
+using namespace std;
 
-    void endwrite(int i);
+class Monitor {
+	private:
+	    // no. of readers
+	    int rcnt;
 
-} M;
+	    // no. of writers
+	    int wcnt;
+
+	    // no. of readers waiting
+	    int waitr;
+
+	    // no. of writers waiting
+	    int waitw;
+
+	    // condition variable to check whether reader can read
+	    pthread_cond_t canread;
+
+	    // condition variable to check whether writer can write
+	    pthread_cond_t canwrite;
+
+	    // mutex for synchronisation
+	    pthread_mutex_t condlock;
+
+	public:
+	    Monitor();
+	    // can change the value of data
+	    void beginread();
+
+	    void endread();
+
+	    void beginwrite();
+
+	    void endwrite();
+
+};
+
+
+#endif
