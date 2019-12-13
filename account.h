@@ -8,14 +8,16 @@ using namespace std;
 class Account {
     private:
         int amount_;
-        Monitor M;
 
     public:
         int password_;
         int id_;
+        Monitor M;
         Account(int amount, int password, int id);
         int getAmount();
-        void setAmount(int amount);
+        void deposit(int amount);
+        bool withdrew(int amount);
+        bool toAcount(int amount, Account account);
 
     };
 
