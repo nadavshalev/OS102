@@ -1,8 +1,10 @@
 #ifndef _Account_
 #define _Account_
 
-#include "monitor.h"
 #include <iostream>
+#include <string>
+
+#include "monitor.h"
 #define SLEEP_TIME 1
 using namespace std;
 
