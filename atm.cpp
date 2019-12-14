@@ -12,11 +12,35 @@ void runATM(string filePath,list <Account*>& accounts){
     	// split line to arguments
         string* args = tokenize(str, ' ');
         string cmd = args[0];
+        runCmd(cmd, args, accounts);
     }
 }
 
-void runCmd(string cmd, string* args){
-	
+void runCmd(string cmd, string* args, list <Account*>& accounts){
+	/************************* Open *************************/
+	if (!strcmp(cmd, "O")) 
+	{
+	}
+	/************************* Deposit ************************/
+	else if (!strcmp(cmd, "D")) 
+	{
+	}
+	/************************* Withdrew ************************/
+	else if (!strcmp(cmd, "W")) 
+	{
+	}
+	/************************* Acount val ************************/
+	else if (!strcmp(cmd, "B")) 
+	{
+	}
+	/************************ Transaction *************************/
+	else if (!strcmp(cmd, "T")) 
+	{
+	}
+	/************************ Command not exist *************************/
+	else
+	{
+	}
 }
 
 string* tokenize(string const &str, const char delim)

@@ -13,7 +13,7 @@ list <Account*> accounts;
 int main(int argc, char *argv[])
 {
 
-    runATM("file1.txt", accounts);
+    runATM("testFile.txt", accounts);
 
     // pthread_t r[5], w[5];
     // int id[5];
@@ -39,7 +39,8 @@ int main(int argc, char *argv[])
     // int amount = 0;
     // bool status = false;
 
-    // Account a = Account(100,"qwe", 1);
+    Account a = Account(100,"qwe", 1);
+    cout << a.toString() << '\n';
     // Account b = Account(50,"asd", 2);
 
     // amount = a.getAmount();

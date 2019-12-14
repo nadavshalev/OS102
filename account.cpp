@@ -62,3 +62,9 @@ bool Account::toAccount(int amount, Account& account){
 	}
 	return sucess;
 }
+
+string Account::toString(){
+	stringstream buffer;
+	buffer << "Account " << id_ << ": Balance - " << amount_ << "$ , Account password - " << password_;
+	return buffer.str();
+}

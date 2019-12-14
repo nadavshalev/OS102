@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 
 #include "monitor.h"
 #define SLEEP_TIME 1
@@ -21,6 +22,7 @@ class Account {
         void deposit(int amount);
         bool withdrew(int amount);
         bool toAccount(int amount, Account& account);
+        string toString();
 
     };
 
