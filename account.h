@@ -3,6 +3,7 @@
 
 #include "monitor.h"
 #include <iostream>
+#define SLEEP_TIME 1
 using namespace std;
 
 class Account {
@@ -10,14 +11,14 @@ class Account {
         int amount_;
 
     public:
-        int password_;
+        string password_;
         int id_;
         Monitor M;
-        Account(int amount, int password, int id);
+        Account(int amount, string password, int id);
         int getAmount();
         void deposit(int amount);
         bool withdrew(int amount);
-        bool toAcount(int amount, Account account);
+        bool toAccount(int amount, Account& account);
 
     };
 

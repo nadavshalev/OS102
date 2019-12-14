@@ -1,12 +1,13 @@
 #include "account.h"
 
 
-Account::Account(int amount, int password, int id) :
+Account::Account(int amount, string password, int id) :
      amount_(amount),password_(password),id_(id) {}
 
 int Account::getAmount()
 {
     M.beginread();
+    sleep(SLEEP_TIME);
     int amount = amount_;
     M.endread();
     return amount;
@@ -15,6 +16,7 @@ int Account::getAmount()
 void Account::deposit(int amount)
 {
     M.beginwrite();
+    sleep(SLEEP_TIME);
     amount_ += amount;
     M.endwrite();
 }
@@ -22,6 +24,7 @@ bool Account::withdrew(int amount)
 {
 	bool sucess = false;
     M.beginwrite();
+    sleep(SLEEP_TIME);
     if(amount_ > amount){
     	amount_ -= amount;
     	sucess = true;
@@ -30,7 +33,7 @@ bool Account::withdrew(int amount)
     return sucess;
 }
 
-bool Account::toAcount(int amount, Account account){
+bool Account::toAccount(int amount, Account& account){
 	bool sucess = false;
 	// lock by order
 	if(id_ > account.id_){
@@ -41,20 +44,21 @@ bool Account::toAcount(int amount, Account account){
 		account.M.beginwrite();
 		M.beginwrite();
 	}
+    sleep(SLEEP_TIME);
 	// extchange money
     if(amount_ > amount){
     	amount_ -= amount;
-    	account.deposit(amount);
+    	account.amount_ += amount;
     	sucess = true;
     }
     // unlock by reverse order
     if(id_ > account.id_){
-		account.M.beginwrite();
-		M.beginwrite();
+		account.M.endwrite();
+		M.endwrite();
 	}
 	else{
-		M.beginwrite();
-		account.M.beginwrite();
+		M.endwrite();
+		account.M.endwrite();
 	}
 	return sucess;
 }
