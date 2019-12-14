@@ -10,17 +10,16 @@
 using namespace std;
 
 class Account {
-    private:
-        int amount_;
-
     public:
         string password_;
         int id_;
+        int amount_;
         Monitor M;
-        Account(int amount, string password, int id);
+
+        Account(int id, string password, int amount);
         int getAmount();
-        void deposit(int amount);
-        bool withdrew(int amount);
+        int deposit(int amount);
+        int withdrew(int amount);
         bool toAccount(int amount, Account& account);
         string toString();
 

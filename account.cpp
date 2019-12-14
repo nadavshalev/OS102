@@ -1,8 +1,8 @@
 #include "account.h"
 
 
-Account::Account(int amount, string password, int id) :
-     amount_(amount),password_(password),id_(id) {}
+Account::Account(int id, string password, int amount) :
+     id_(id), password_(password), amount_(amount){}
 
 int Account::getAmount()
 {
@@ -13,24 +13,25 @@ int Account::getAmount()
     return amount;
 }
 
-void Account::deposit(int amount)
+int Account::deposit(int amount)
 {
     M.beginwrite();
     sleep(SLEEP_TIME);
     amount_ += amount;
     M.endwrite();
+    return amount_;
 }
-bool Account::withdrew(int amount)
+int Account::withdrew(int amount)
 {
-	bool sucess = false;
+	int result = -1;
     M.beginwrite();
     sleep(SLEEP_TIME);
     if(amount_ > amount){
     	amount_ -= amount;
-    	sucess = true;
+    	result = amount_;
     }
     M.endwrite();
-    return sucess;
+    return amount_;
 }
 
 bool Account::toAccount(int amount, Account& account){

@@ -13,7 +13,7 @@ list <Account*> accounts;
 int main(int argc, char *argv[])
 {
 
-    runATM("testFile.txt", accounts);
+    runATM("testFile.txt", accounts, 1);
 
     // pthread_t r[5], w[5];
     // int id[5];
