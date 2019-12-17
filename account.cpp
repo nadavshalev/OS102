@@ -64,6 +64,15 @@ bool Account::toAccount(int amount, Account& account){
 	return sucess;
 }
 
+int Account::commission(double prec){
+    M.beginwrite();
+    sleep(SLEEP_TIME);
+    int amount = (int)round(amount_ * prec/100);
+    amount_ -= amount;
+    M.endwrite();
+    return amount;
+}
+
 string Account::toString(){
 	stringstream buffer;
 	buffer << "Account " << id_ << ": Balance - " << amount_ << "$ , Account password - " << password_;

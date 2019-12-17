@@ -9,6 +9,7 @@ void runATM(string filePath,list <Account*>& accounts, int atmID){
     string str; 
     while (getline(file, str))
     {
+        sleep(0.1);
     	// split line to arguments
         string* args = tokenize(str, ' ');
         string cmd = args[0];
@@ -17,7 +18,7 @@ void runATM(string filePath,list <Account*>& accounts, int atmID){
 }
 
 void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID){
-	cout << cmd << "\t1: " << args[1] << "\t2: " << args[2] << "\t3: " << args[3] << "\n";
+//	cout << cmd << "\t1: " << args[1] << "\t2: " << args[2] << "\t3: " << args[3] << "\n";
 	int accID = stoi(args[1]);
 	/************************* Open *************************/
 	if (cmd == "O")
@@ -64,12 +65,23 @@ void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID){
 	else if (cmd == "B")
 	{
 		int amount = acc->getAmount();
-			cout << atmID << "‫‪‫‪: Account‬‬ ‫"<< accID << " ‫‪balance‬‬ ‫‪is‬‬ ‫" << amount << "\n";
+        cout << atmID << "‫‪‫‪: Account‬‬ ‫"<< accID << " ‫‪balance‬‬ ‫‪is‬‬ ‫" << amount << "\n";
 	}
 	/************************ Transaction *************************/
 	else if (cmd == "T")
 	{
-	}
+	    Account* acc2 = findAccount(accounts, stoi(args[3]));
+        if(acc2 == NULL){
+            cout << "‫‪Error‬‬ ‫‪" << atmID << "‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫"<< accID << " ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬\n";
+            return;
+        }
+        int amount = stoi(args[4]);
+		bool result = acc->toAccount(amount, *acc2);
+		if (result)
+			cout << atmID << ": Transfer " << amount << " from account " << accID << " to account " << args[3] << " new account balance is " << acc->amount_ << " new target account balance is " << acc2->amount_ << "\n";
+		else
+		    cout << "‫‪Error‬‬ ‫‪" << atmID << "‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪‫‪balance‬‬ ‫‪is‬‬ ‫‪lower‬‬ ‫‪than‬‬ ‫"<< amount << "\n";
+        }
 	/************************ Command not exist *************************/
 	else
 	{

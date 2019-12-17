@@ -6,6 +6,7 @@
 #include "monitor.h"
 #include "account.h"
 #include "atm.h"
+#include "bank.h"
 using namespace std;
 
 list <Account*> accounts;
@@ -38,9 +39,10 @@ int main(int argc, char *argv[])
 
     // int amount = 0;
     // bool status = false;
-
+    int bc = 0;
     Account a = Account(100,"qwe", 1);
-    cout << a.toString() << '\n';
+
+    runBank(accounts, bc);
     // Account b = Account(50,"asd", 2);
 
     // amount = a.getAmount();

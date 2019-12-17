@@ -5,3 +5,5 @@ B 222 qweqwe
 D 111 qweqwe 30
 W 222 asdasd 40
 B 222 asdasd
+B 111 qweqwe
+T 111 qweqwe 222 10
