@@ -11,10 +11,15 @@
 #include <sstream>
 using namespace std;
 
+extern pthread_mutex_t logLock;
 
+struct bankArgs {
+	list <Account*>& accounts;
+	int& bankBalance;
+	stringstream& strLog;
+};
 
-
-void runBank(list <Account*>& accounts, int& bankBalance, stringstream& strLog);
+void* runBank(void *argin);
 
 
 

@@ -11,13 +11,38 @@ using namespace std;
 
 list <Account*> accounts;
 stringstream strLog;
+pthread_mutex_t logLock;
 
 int main(int argc, char *argv[])
 {
 
-    runATM("testFile.txt", accounts, 1, strLog);
+    pthread_mutex_init(&logLock, NULL);
+    string filePath = "testFile.txt";
 
-    // pthread_t r[5], w[5];
+    int bc = 0;
+    int numberATM = 3;
+
+    pthread_t bank, atms[numberATM];
+    int id[numberATM];
+
+    struct bankArgs bArgs{
+        accounts,
+        bc,
+        strLog
+    };
+    struct atmArgs aArgs[numberATM];
+
+    for(int i = 0; i < numberATM; ++i){
+        id[i] = i;
+        aArgs[i].filePath = filePath;
+        aArgs[i].accounts = &accounts;
+        aArgs[i].atmID = &id[i];
+        aArgs[i].strLog = &strLog;
+        pthread_create(&atms[i], NULL, &runATM, (void*)aArgs);
+    }
+
+    pthread_create(&bank, NULL, &runBank, (void*)&bArgs);
+
     // int id[5];
     // for (int i = 0; i < 5; i++) {
     //     id[i] = i;
@@ -40,16 +65,20 @@ int main(int argc, char *argv[])
 
     // int amount = 0;
     // bool status = false;
-    int bc = 0;
 
     // runBank(accounts, bc, strLog);
 
 
     // cout << strLog.str();
+    // pthread_join(bank, NULL);
+    for(int i = 0; i < numberATM; ++i){
+        pthread_join(atms[i], NULL);
+    }
+    pthread_cancel(bank);
 
-    // ofstream out("log.txt");
-    // out << strLog.str();
-    // out.close();
+    ofstream out("log.txt");
+    out << strLog.str();
+    out.close();
 
     // Account b = Account(50,"asd", 2);
 

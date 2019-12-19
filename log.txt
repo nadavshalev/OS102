@@ -1,0 +1,30 @@
+0‫‪‫‪: New Account‬‬ id is ‫111‫‪ with‬‬ ‫‪password‬‬ ‫qweqwe ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫100
+Error 0‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
+Error 0‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
+0‫‪‫‪: New Account‬‬ id is ‫222‫‪ with‬‬ ‫‪password‬‬ ‫asdasd ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫200
+Error 0‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
+Error 0‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
+0‫‪‫‪: Account‬‬ ‫111 ‫‪balance‬‬ ‫‪is‬‬ ‫100
+0‫‪‫‪: Account‬‬ ‫111 ‫‪balance‬‬ ‫‪is‬‬ ‫100
+‫‪Error‬‬ ‫‪0‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪password‬‬ ‫‪for‬‬ ‫‪account‬‬ ‫‪id‬‬ ‫222 ‫‪‫‪is‬‬ ‫‪incorrect‬‬
+0‫‪‫‪: Account‬‬ ‫111 ‫‪balance‬‬ ‫‪is‬‬ ‫100
+‫‪Error‬‬ ‫‪0‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪password‬‬ ‫‪for‬‬ ‫‪account‬‬ ‫‪id‬‬ ‫222 ‫‪‫‪is‬‬ ‫‪incorrect‬‬
+‫‪Error‬‬ ‫‪0‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪password‬‬ ‫‪for‬‬ ‫‪account‬‬ ‫‪id‬‬ ‫222 ‫‪‫‪is‬‬ ‫‪incorrect‬‬
+0‫‪‫‪: Account‬‬ ‫111 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫130 after 30$‬‬ ‫‪was‬‬ deposited
+0‫‪‫‪: Account‬‬ ‫111 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫160 after 30$‬‬ ‫‪was‬‬ deposited
+0‫‪‫‪: Account‬‬ ‫222 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫160 after 40$‬‬ ‫‪was‬‬ ‫‪withdrew‬‬
+0‫‪‫‪: Account‬‬ ‫111 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫190 after 30$‬‬ ‫‪was‬‬ deposited
+0‫‪‫‪: Account‬‬ ‫222 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫120 after 40$‬‬ ‫‪was‬‬ ‫‪withdrew‬‬
+Bank: commission of ‬3.68038 where charged, the bank gained 7$ from account 111
+0‫‪‫‪: Account‬‬ ‫222 ‫‪balance‬‬ ‫‪is‬‬ ‫120
+0‫‪‫‪: Account‬‬ ‫222 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫80 after 40$‬‬ ‫‪was‬‬ ‫‪withdrew‬‬
+0‫‪‫‪: Account‬‬ ‫111 ‫‪balance‬‬ ‫‪is‬‬ ‫183
+0‫‪‫‪: Account‬‬ ‫222 ‫‪balance‬‬ ‫‪is‬‬ ‫80
+0‫‪‫‪: Account‬‬ ‫111 ‫‪balance‬‬ ‫‪is‬‬ ‫183
+Bank: commission of ‬2.78877 where charged, the bank gained 2$ from account 222
+0‫‪‫‪: Account‬‬ ‫222 ‫‪balance‬‬ ‫‪is‬‬ ‫78
+0: Transfer 10 from account 111 to account 222 new account balance is 173 new target account balance is 88
+0‫‪‫‪: Account‬‬ ‫111 ‫‪balance‬‬ ‫‪is‬‬ ‫173
+0: Transfer 10 from account 111 to account 222 new account balance is 163 new target account balance is 98
+Bank: commission of ‬3.5662 where charged, the bank gained 6$ from account 111
+0: Transfer 10 from account 111 to account 222 new account balance is 147 new target account balance is 108

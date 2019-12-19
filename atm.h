@@ -10,8 +10,16 @@
 #include <vector>
 using namespace std;
 
+extern pthread_mutex_t logLock;
 
-void runATM(string filePath,list <Account*>& accounts, int atmID, stringstream& strLog);
+struct atmArgs {
+	string filePath;
+	list <Account*>* accounts;
+	int *atmID;
+	stringstream* strLog;
+};
+
+void* runATM(void *argin);
 void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID, stringstream& strLog);
 
 string* tokenize(string const &str, const char delim);
