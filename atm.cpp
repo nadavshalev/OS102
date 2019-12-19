@@ -3,7 +3,7 @@
 #include "atm.h"
 
 
-void runATM(string filePath,list <Account*>& accounts, int atmID){
+void runATM(string filePath,list <Account*>& accounts, int atmID, stringstream& strLog){
 	
 	ifstream file(filePath);
     string str; 
@@ -13,34 +13,34 @@ void runATM(string filePath,list <Account*>& accounts, int atmID){
     	// split line to arguments
         string* args = tokenize(str, ' ');
         string cmd = args[0];
-        runCmd(cmd, args, accounts, atmID);
+        runCmd(cmd, args, accounts, atmID, strLog);
     }
 }
 
-void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID){
-//	cout << cmd << "\t1: " << args[1] << "\t2: " << args[2] << "\t3: " << args[3] << "\n";
+void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID, stringstream& strLog){
+//	strLog << cmd << "\t1: " << args[1] << "\t2: " << args[2] << "\t3: " << args[3] << "\n";
 	int accID = stoi(args[1]);
 	/************************* Open *************************/
 	if (cmd == "O")
 	{
 		if(findAccount(accounts, accID) != NULL){
-			cout << "Error " << atmID << "‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬\n";
+			strLog << "Error " << atmID << "‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬\n";
 			return;
 		}
 		Account* acc = new Account(accID, args[2], stoi(args[3]));
 		accounts.push_back(acc);
-		cout << atmID << "‫‪‫‪: New Account‬‬ id is ‫"<< accID << "‫‪ with‬‬ ‫‪password‬‬ ‫" << args[2] << " ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫" << stoi(args[3]) << "\n";
+		strLog << atmID << "‫‪‫‪: New Account‬‬ id is ‫"<< accID << "‫‪ with‬‬ ‫‪password‬‬ ‫" << args[2] << " ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫" << stoi(args[3]) << "\n";
 		return;
 	}
 
 	// verify account axist and correct pass
 	Account* acc = findAccount(accounts, accID);
 	if(acc == NULL){
-		cout << "‫‪Error‬‬ ‫‪" << atmID << "‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫"<< accID << " ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬\n";
+		strLog << "‫‪Error‬‬ ‫‪" << atmID << "‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫"<< accID << " ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬\n";
 		return;
 	}
 	if(acc->password_ != args[2]){
-		cout << "‫‪Error‬‬ ‫‪" << atmID << "‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪password‬‬ ‫‪for‬‬ ‫‪account‬‬ ‫‪id‬‬ ‫"<< accID << " ‫‪‫‪is‬‬ ‫‪incorrect‬‬\n";
+		strLog << "‫‪Error‬‬ ‫‪" << atmID << "‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪password‬‬ ‫‪for‬‬ ‫‪account‬‬ ‫‪id‬‬ ‫"<< accID << " ‫‪‫‪is‬‬ ‫‪incorrect‬‬\n";
 		return;
 	}
 
@@ -49,7 +49,7 @@ void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID){
 	{
 		int amount = stoi(args[3]);
 		int result = acc->deposit(amount);
-		cout << atmID << "‫‪‫‪: Account‬‬ ‫"<< accID << " ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫" << result << " after " << amount << "$‬‬ ‫‪was‬‬ deposited\n";
+		strLog << atmID << "‫‪‫‪: Account‬‬ ‫"<< accID << " ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫" << result << " after " << amount << "$‬‬ ‫‪was‬‬ deposited\n";
 	}
 	/************************* Withdrew ************************/
 	else if (cmd == "W")
@@ -57,30 +57,30 @@ void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID){
 		int amount = stoi(args[3]);
 		int result = acc->withdrew(amount);
 		if (result == -1)
-			cout << "‫‪Error‬‬ ‫‪" << atmID << "‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪‫‪balance‬‬ ‫‪is‬‬ ‫‪lower‬‬ ‫‪than‬‬ ‫"<< amount << "\n";
+			strLog << "‫‪Error‬‬ ‫‪" << atmID << "‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪‫‪balance‬‬ ‫‪is‬‬ ‫‪lower‬‬ ‫‪than‬‬ ‫"<< amount << "\n";
 		else
-			cout << atmID << "‫‪‫‪: Account‬‬ ‫"<< accID << " ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫" << result << " after " << amount << "$‬‬ ‫‪was‬‬ ‫‪withdrew‬‬\n";
+			strLog << atmID << "‫‪‫‪: Account‬‬ ‫"<< accID << " ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫" << result << " after " << amount << "$‬‬ ‫‪was‬‬ ‫‪withdrew‬‬\n";
 	}
 	/************************* Acount val ************************/
 	else if (cmd == "B")
 	{
 		int amount = acc->getAmount();
-        cout << atmID << "‫‪‫‪: Account‬‬ ‫"<< accID << " ‫‪balance‬‬ ‫‪is‬‬ ‫" << amount << "\n";
+        strLog << atmID << "‫‪‫‪: Account‬‬ ‫"<< accID << " ‫‪balance‬‬ ‫‪is‬‬ ‫" << amount << "\n";
 	}
 	/************************ Transaction *************************/
 	else if (cmd == "T")
 	{
 	    Account* acc2 = findAccount(accounts, stoi(args[3]));
         if(acc2 == NULL){
-            cout << "‫‪Error‬‬ ‫‪" << atmID << "‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫"<< accID << " ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬\n";
+            strLog << "‫‪Error‬‬ ‫‪" << atmID << "‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫"<< accID << " ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬\n";
             return;
         }
         int amount = stoi(args[4]);
 		bool result = acc->toAccount(amount, *acc2);
 		if (result)
-			cout << atmID << ": Transfer " << amount << " from account " << accID << " to account " << args[3] << " new account balance is " << acc->amount_ << " new target account balance is " << acc2->amount_ << "\n";
+			strLog << atmID << ": Transfer " << amount << " from account " << accID << " to account " << args[3] << " new account balance is " << acc->amount_ << " new target account balance is " << acc2->amount_ << "\n";
 		else
-		    cout << "‫‪Error‬‬ ‫‪" << atmID << "‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪‫‪balance‬‬ ‫‪is‬‬ ‫‪lower‬‬ ‫‪than‬‬ ‫"<< amount << "\n";
+		    strLog << "‫‪Error‬‬ ‫‪" << atmID << "‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪‫‪balance‬‬ ‫‪is‬‬ ‫‪lower‬‬ ‫‪than‬‬ ‫"<< amount << "\n";
         }
 	/************************ Command not exist *************************/
 	else

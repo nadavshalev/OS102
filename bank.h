@@ -8,12 +8,13 @@
 #include <iterator>
 #include <string>
 #include <vector>
+#include <sstream>
 using namespace std;
 
 
 
 
-void runBank(list <Account*>& accounts, int& bankBalance);
+void runBank(list <Account*>& accounts, int& bankBalance, stringstream& strLog);
 
 
 

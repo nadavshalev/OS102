@@ -10,11 +10,12 @@
 using namespace std;
 
 list <Account*> accounts;
+stringstream strLog;
 
 int main(int argc, char *argv[])
 {
 
-    runATM("testFile.txt", accounts, 1);
+    runATM("testFile.txt", accounts, 1, strLog);
 
     // pthread_t r[5], w[5];
     // int id[5];
@@ -40,9 +41,16 @@ int main(int argc, char *argv[])
     // int amount = 0;
     // bool status = false;
     int bc = 0;
-    Account a = Account(100,"qwe", 1);
 
-    runBank(accounts, bc);
+    // runBank(accounts, bc, strLog);
+
+
+    // cout << strLog.str();
+
+    // ofstream out("log.txt");
+    // out << strLog.str();
+    // out.close();
+
     // Account b = Account(50,"asd", 2);
 
     // amount = a.getAmount();
