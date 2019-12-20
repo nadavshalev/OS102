@@ -36,6 +36,8 @@ int Account::withdrew(int amount)
 
 bool Account::toAccount(int amount, Account& account){
 	bool sucess = false;
+    if(id_ == account.id_)
+        return true;
 	// lock by order
 	if(id_ > account.id_){
 		M.beginwrite();
@@ -75,6 +77,16 @@ int Account::commission(double prec){
 
 string Account::toString(){
 	stringstream buffer;
-	buffer << "Account " << id_ << ": Balance - " << amount_ << "$ , Account password - " << password_;
+    M.beginread();
+	buffer << "Account " << id_ << ": Balance - " << amount_ << "$ , Account password - " << password_ << "\n";
+    M.endread();
 	return buffer.str();
+}
+
+bool compare(Account* a, Account* b)
+{
+    if(a->id_ < b->id_)
+        return 0; //change to 1 if max heap required
+    else 
+        return 1; //change to 0 if max heap required
 }

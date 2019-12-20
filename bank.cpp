@@ -3,8 +3,7 @@
 void* runBank(void *argin){
     struct bankArgs *arg;
     arg = (struct bankArgs *) argin;
-    int count = 0;
-    while(count<5){
+    while(!terminateFlag){
         sleep(3);
         list <Account*> :: iterator it;
         for(it = arg->accounts.begin(); it != arg->accounts.end(); ++it){
@@ -15,7 +14,6 @@ void* runBank(void *argin){
             arg->strLog << "Bank: commission of ‬" << prec << " where charged, the bank gained " << amount << "$ from account " << (*it)->id_ << "\n";
             pthread_mutex_unlock(&logLock);
         }
-        ++count;
     }
     pthread_exit(NULL);
 }

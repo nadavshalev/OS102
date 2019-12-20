@@ -12,6 +12,7 @@
 using namespace std;
 
 extern pthread_mutex_t logLock;
+extern bool  terminateFlag;
 
 struct bankArgs {
 	list <Account*>& accounts;

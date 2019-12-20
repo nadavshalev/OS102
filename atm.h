@@ -8,6 +8,7 @@
 #include <iterator> 
 #include <string>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 extern pthread_mutex_t logLock;

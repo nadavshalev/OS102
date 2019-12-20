@@ -11,7 +11,7 @@ void* runATM(void *argin){
     string str; 
     while (getline(file, str))
     {
-        sleep(0.1);
+        usleep(100000);
     	// split line to arguments
         string* args = tokenize(str, ' ');
         string cmd = args[0];
@@ -34,6 +34,7 @@ void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID, stri
 		}
 		Account* acc = new Account(accID, args[2], stoi(args[3]));
 		accounts.push_back(acc);
+		// make_heap(accounts.begin(), accounts.end(), compare);
 		pthread_mutex_lock(&logLock);
 		strLog << atmID << "‫‪‫‪: New Account‬‬ id is ‫"<< accID << "‫‪ with‬‬ ‫‪password‬‬ ‫" << args[2] << " ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫" << stoi(args[3]) << "\n";
 		pthread_mutex_unlock(&logLock);

@@ -27,4 +27,6 @@ class Account {
 
     };
 
+bool compare(Account* a, Account* b);
+
 #endif
