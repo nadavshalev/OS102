@@ -16,6 +16,10 @@ int bankCount; //bank amount
 bool terminateFlag; // flag to stop bank and print threads
 void* printStatus(void* argin);
 
+//********************************************
+// function name: main
+// Description: main function - run the softwer
+//********************************************
 int main(int argc, char *argv[])
 {
     // init vars
@@ -60,6 +64,10 @@ int main(int argc, char *argv[])
     return 0;
 }
 
+//********************************************
+// function name: printStatus
+// Description: print status to screen and save logs to file
+//********************************************
 void* printStatus(void* argin){
     stringstream printString;
     printString << "";

@@ -9,36 +9,23 @@ using namespace std;
 
 class Monitor {
 	private:
-	    // no. of readers
-	    int rcnt;
-
-	    // no. of writers
-	    int wcnt;
-
-	    // no. of readers waiting
-	    int waitr;
-
-	    // no. of writers waiting
-	    int waitw;
+	    int read_cnt;
+	    int write_cnt;
+	    int wait_readers;
+	    int wait_writers;
 
 	    // condition variable to check whether reader can read
 	    pthread_cond_t canread;
-
 	    // condition variable to check whether writer can write
 	    pthread_cond_t canwrite;
-
 	    // mutex for synchronisation
 	    pthread_mutex_t condlock;
 
 	public:
 	    Monitor();
-	    // can change the value of data
 	    void beginread();
-
 	    void endread();
-
 	    void beginwrite();
-
 	    void endwrite();
 
 };

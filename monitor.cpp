@@ -1,76 +1,78 @@
 #include "monitor.h"
 
+//********************************************
+// function name: Monitor
+// Description: init monitor class
+//********************************************
 Monitor::Monitor() :
-     rcnt(0), wcnt(0), waitr(0), waitw(0), canread(), canwrite(), condlock()
+     read_cnt(0), write_cnt(0), wait_readers(0), wait_writers(0), canread(), canwrite(), condlock()
 {
-    rcnt = 0;
-    wcnt = 0;
-    waitr = 0;
-    waitw = 0;
+    read_cnt = 0;
+    write_cnt = 0;
+    wait_readers = 0;
+    wait_writers = 0;
 
     pthread_cond_init(&canread, NULL);
     pthread_cond_init(&canwrite, NULL);
     pthread_mutex_init(&condlock, NULL);
 }
 
-// mutex provide synchronisation so that no other thread
-// can change the value of data
+//********************************************
+// function name: beginread
+// Description: register reader to minitor
+//********************************************
 void Monitor::beginread()
 {
     pthread_mutex_lock(&condlock);
 
-    // if there are active or waiting writers
-    if (wcnt == 1 || waitw > 0) {
-        // incrementing waiting readers
-        waitr++;
-
-//            cout << "reader " << i << " is sleep reading\n";
-        // reader suspended
+    if (write_cnt == 1 || wait_writers > 0) {
+        wait_readers++;
         pthread_cond_wait(&canread, &condlock);
-        waitr--;
+        wait_readers--;
     }
-
-    // else reader reads the resource
-    rcnt++;
+    read_cnt++;
     pthread_mutex_unlock(&condlock);
     pthread_cond_broadcast(&canread);
 }
 
+//********************************************
+// function name: endread
+// Description: unregister reader to minitor
+//********************************************
 void Monitor::endread()
 {
 
-    // if there are no readers left then writer enters monitor
     pthread_mutex_lock(&condlock);
-
-    if (--rcnt == 0)
+    if (--read_cnt == 0)
         pthread_cond_signal(&canwrite);
-
     pthread_mutex_unlock(&condlock);
 }
 
+//********************************************
+// function name: beginwrite
+// Description: register writer to minitor
+//********************************************
 void Monitor::beginwrite()
 {
     pthread_mutex_lock(&condlock);
-
-    // a writer can enter when there are no active
-    // or waiting readers or other writer
-    if (wcnt == 1 || rcnt > 0) {
-        ++waitw;
-//            cout << "writer " << i << " is sleep writing\n";
+    if (write_cnt == 1 || read_cnt > 0) {
+        ++wait_writers;
         pthread_cond_wait(&canwrite, &condlock);
-        --waitw;
+        --wait_writers;
     }
-    wcnt = 1;
+    write_cnt = 1;
     pthread_mutex_unlock(&condlock);
 }
 
+//********************************************
+// function name: Monitor
+// Description: unregister writer to minitor
+//********************************************
 void Monitor::endwrite()
 {
     pthread_mutex_lock(&condlock);
-    wcnt = 0;
-
-    // if any readers are waiting, threads are unblocked
-    if (waitr > 0)
+    write_cnt = 0;
+    if (wait_readers > 0)
         pthread_cond_signal(&canread);
     else
         pthread_cond_signal(&canwrite);

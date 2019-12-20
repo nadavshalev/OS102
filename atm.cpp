@@ -2,11 +2,16 @@
 
 #include "atm.h"
 
-
+//********************************************
+// function name: runATM
+// Description: read atm file and exec each line
+//********************************************
 void* runATM(void *argin){
+	// get input arguments
 	struct atmArgs *arg;
     arg = (struct atmArgs *) argin;
 
+    // open file for stream
 	ifstream file(arg->filePath);
     string str; 
     while (getline(file, str))
@@ -15,25 +20,32 @@ void* runATM(void *argin){
     	// split line to arguments
         string* args = tokenize(str, ' ');
         string cmd = args[0];
+        // exec cmd
         runCmd(cmd, args, (*arg->accounts), (*arg->atmID), (*arg->strLog));
     }
     pthread_exit(NULL);
 }
 
+//********************************************
+// function name: runCmd
+// Description: exec commands
+//********************************************
 void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID, stringstream& strLog){
-//	strLog << cmd << "\t1: " << args[1] << "\t2: " << args[2] << "\t3: " << args[3] << "\n";
 	int accID = stoi(args[1]);
 	/************************* Open *************************/
 	if (cmd == "O")
 	{
+		// check if eccount already exist
 		if(findAccount(accounts, accID) != NULL){
 			pthread_mutex_lock(&logLock);
 			strLog << "Error " << atmID << "‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬\n";
 			pthread_mutex_unlock(&logLock);
 			return;
 		}
+		// create new account
 		Account* acc = new Account(accID, args[2], stoi(args[3]));
 
+		// push and resort the account's list
 		pthread_mutex_lock(&accountListLock);
 		accounts.push_back(acc);
         accounts.sort(compare);
@@ -45,7 +57,7 @@ void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID, stri
 		return;
 	}
 
-	// verify account axist and correct pass
+	// verify account axist and correct password
 	Account* acc = findAccount(accounts, accID);
 	if(acc == NULL){
 		pthread_mutex_lock(&logLock);
@@ -96,6 +108,7 @@ void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID, stri
 	/************************ Transaction *************************/
 	else if (cmd == "T")
 	{
+		// check if account 2 is axist
 	    Account* acc2 = findAccount(accounts, stoi(args[3]));
         if(acc2 == NULL){
         	pthread_mutex_lock(&logLock);
@@ -119,9 +132,14 @@ void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID, stri
 	/************************ Command not exist *************************/
 	else
 	{
+		// do nothing...
 	}
 }
 
+//********************************************
+// function name: tokenize
+// Description: split to argunents
+//********************************************
 string* tokenize(string const &str, const char delim)
 {
 	size_t start;
@@ -137,13 +155,16 @@ string* tokenize(string const &str, const char delim)
 	return spString;
 }
 
+//********************************************
+// function name: findAccount
+// Description: find account in the list
+// Retuen: pointer to the account
+//********************************************
 Account* findAccount(list <Account*>& accounts, int id){
-	// pthread_mutex_lock(&accountListLock);
 	list <Account*> :: iterator it;
     for(it = accounts.begin(); it != accounts.end(); ++it){
     	if ((*it)->id_ == id)
     		return (*it);
     }
     return NULL;
-    // pthread_mutex_unlock(&accountListLock);
 }
