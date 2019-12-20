@@ -12,7 +12,7 @@
 using namespace std;
 
 extern pthread_mutex_t logLock;
-
+extern pthread_mutex_t accountListLock;
 struct atmArgs {
 	string filePath;
 	list <Account*>* accounts;

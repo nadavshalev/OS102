@@ -33,8 +33,12 @@ void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID, stri
 			return;
 		}
 		Account* acc = new Account(accID, args[2], stoi(args[3]));
+
+		pthread_mutex_lock(&accountListLock);
 		accounts.push_back(acc);
-		// make_heap(accounts.begin(), accounts.end(), compare);
+        accounts.sort(compare);
+        pthread_mutex_unlock(&accountListLock);
+
 		pthread_mutex_lock(&logLock);
 		strLog << atmID << "‫‪‫‪: New Account‬‬ id is ‫"<< accID << "‫‪ with‬‬ ‫‪password‬‬ ‫" << args[2] << " ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫" << stoi(args[3]) << "\n";
 		pthread_mutex_unlock(&logLock);
@@ -134,10 +138,12 @@ string* tokenize(string const &str, const char delim)
 }
 
 Account* findAccount(list <Account*>& accounts, int id){
+	// pthread_mutex_lock(&accountListLock);
 	list <Account*> :: iterator it;
     for(it = accounts.begin(); it != accounts.end(); ++it){
     	if ((*it)->id_ == id)
     		return (*it);
     }
     return NULL;
+    // pthread_mutex_unlock(&accountListLock);
 }

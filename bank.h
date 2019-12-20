@@ -12,6 +12,7 @@
 using namespace std;
 
 extern pthread_mutex_t logLock;
+extern pthread_mutex_t bankCountLock;
 extern bool  terminateFlag;
 
 struct bankArgs {

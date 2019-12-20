@@ -11,7 +11,9 @@ void* runBank(void *argin){
             int amount = (*it)->commission(prec);
             arg->bankBalance += amount;
             pthread_mutex_lock(&logLock);
+            pthread_mutex_unlock(&bankCountLock);
             arg->strLog << "Bank: commission of ‬" << prec << " where charged, the bank gained " << amount << "$ from account " << (*it)->id_ << "\n";
+            pthread_mutex_unlock(&bankCountLock);
             pthread_mutex_unlock(&logLock);
         }
     }

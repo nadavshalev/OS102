@@ -9,24 +9,23 @@
 #include "bank.h"
 using namespace std;
 
-list <Account*> accounts;
-stringstream strLog;
-pthread_mutex_t logLock;
-int bankCount;
-bool terminateFlag;
+list <Account*> accounts; //accounts list
+stringstream strLog; // log buffer
+pthread_mutex_t logLock, accountListLock, bankCountLock;
+int bankCount; //bank amount
+bool terminateFlag; // flag to stop bank and print threads
 void* printStatus(void* argin);
 
 int main(int argc, char *argv[])
 {
+    // init vars
     pthread_mutex_init(&logLock, NULL);
-
+    pthread_mutex_init(&accountListLock, NULL);
     terminateFlag = false;
     int numberATM = stoi(argv[1]);
     bankCount = 0;
-
     pthread_t bank, atms[numberATM], print2screen;
     int id[numberATM];
-
     struct bankArgs bArgs{
         accounts,
         bankCount,
@@ -34,8 +33,9 @@ int main(int argc, char *argv[])
     };
     struct atmArgs aArgs[numberATM];
 
+    // start atm threads
     for(int i = 0; i < numberATM; ++i){
-        id[i] = i;
+        id[i] = i+1;
         aArgs[i].filePath = string(argv[i+2]);
         aArgs[i].accounts = &accounts;
         aArgs[i].atmID = &id[i];
@@ -43,33 +43,48 @@ int main(int argc, char *argv[])
         pthread_create(&atms[i], NULL, &runATM, (void*)&aArgs[i]);
     }
 
+    // start bank and print threads
     pthread_create(&bank, NULL, &runBank, (void*)&bArgs);
     pthread_create(&print2screen, NULL, &printStatus, NULL);
 
+    // wait for all accounts to finish
     for(int i = 0; i < numberATM; ++i){
         pthread_join(atms[i], NULL);
     }
+
+    // terminate bank and print threads
     terminateFlag = true;
+    pthread_join(bank, NULL);
+    pthread_join(print2screen, NULL);
 
-
+    return 0;
 }
 
 void* printStatus(void* argin){
     stringstream printString;
     printString << "";
     remove("log.txt");
-    int run = 0;
+
     while(!terminateFlag){
+        // clear buffer
         printString.str("");
+
+        // print account status to buffer 
+        pthread_mutex_lock(&accountListLock);
         list <Account*> :: iterator it;
         for(it = accounts.begin(); it != accounts.end(); ++it){
             printString << (*it)->toString();
         }
+        pthread_mutex_unlock(&accountListLock);
+
+        // print buffer to screen (display all at once)
+        pthread_mutex_lock(&bankCountLock);
         printString << "The bank has " << bankCount << "$\n";
+        pthread_mutex_unlock(&bankCountLock);
         cout << "\033[2J\033[1;1H";
-        cout << run << "\n";
         cout << printString.str();
 
+        // update log file
         pthread_mutex_lock(&logLock);
         ofstream out("log.txt",ios_base::app);
         out << strLog.str();
@@ -77,8 +92,8 @@ void* printStatus(void* argin){
         strLog.str("");
         pthread_mutex_unlock(&logLock);
 
+        // sleep for 1/2 sec
         usleep(500000);
-        ++run;
     }   
     pthread_exit(NULL);
 }

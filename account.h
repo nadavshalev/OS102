@@ -20,7 +20,7 @@ class Account {
         Account(int id, string password, int amount);
         int getAmount();
         int deposit(int amount);
-        int withdrew(int amount);
+        int withdrew(int towithdrew);
         int commission(double prec);
         bool toAccount(int amount, Account& account);
         string toString();
