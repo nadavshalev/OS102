@@ -1,93 +1,11 @@
-‫‪Error‬‬ ‫‪1‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫959 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫211 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪4‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫963 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-3‫‪‫‪: New Account‬‬ id is ‫119‫‪ with‬‬ ‫‪password‬‬ ‫7471 ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫3117
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫963 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-4‫‪‫‪: New Account‬‬ id is ‫450‫‪ with‬‬ ‫‪password‬‬ ‫9910 ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫2377
-‫‪Error‬‬ ‫‪1‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫195 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫958 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪4‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫450 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫958 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 4‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫958 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪4‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫958 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫958 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪4‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫195 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫196 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫676 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫676 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫757 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪3‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪‫‪balance‬‬ ‫‪is‬‬ ‫‪lower‬‬ ‫‪than‬‬ ‫7517
-‫‪Error‬‬ ‫‪3‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪password‬‬ ‫‪for‬‬ ‫‪account‬‬ ‫‪id‬‬ ‫450 ‫‪‫‪is‬‬ ‫‪incorrect‬‬
-1‫‪‫‪: Account‬‬ ‫450 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫8564 after 6187$‬‬ ‫‪was‬‬ deposited
-2‫‪‫‪: New Account‬‬ id is ‫676‫‪ with‬‬ ‫‪password‬‬ ‫2278 ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫5645
-3‫‪‫‪: New Account‬‬ id is ‫176‫‪ with‬‬ ‫‪password‬‬ ‫1232 ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫4511
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫963 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-3‫‪‫‪: New Account‬‬ id is ‫958‫‪ with‬‬ ‫‪password‬‬ ‫1744 ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫908
-Error 2‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
-3‫‪‫‪: New Account‬‬ id is ‫963‫‪ with‬‬ ‫‪password‬‬ ‫9219 ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫6484
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫196 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪3‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫103 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 2‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
-Error 2‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪password‬‬ ‫‪for‬‬ ‫‪account‬‬ ‫‪id‬‬ ‫676 ‫‪‫‪is‬‬ ‫‪incorrect‬‬
-4‫‪‫‪: Account‬‬ ‫450 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫4008 after 4556$‬‬ ‫‪was‬‬ ‫‪withdrew‬‬
-Error 4‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
-Error 4‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
-‫‪Error‬‬ ‫‪4‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫725 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪4‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫195 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-2‫‪‫‪: Account‬‬ ‫958 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫9767 after 8859$‬‬ ‫‪was‬‬ deposited
-Error 2‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫195 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪1‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪‫‪balance‬‬ ‫‪is‬‬ ‫‪lower‬‬ ‫‪than‬‬ ‫7972
-‫‪Error‬‬ ‫‪1‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫195 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪1‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫134 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-4‫‪‫‪: Account‬‬ ‫963 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫15024 after 8540$‬‬ ‫‪was‬‬ deposited
-3‫‪‫‪: New Account‬‬ id is ‫195‫‪ with‬‬ ‫‪password‬‬ ‫5496 ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫7354
-‫‪Error‬‬ ‫‪3‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪password‬‬ ‫‪for‬‬ ‫‪account‬‬ ‫‪id‬‬ ‫195 ‫‪‫‪is‬‬ ‫‪incorrect‬‬
-Bank: commission of ‬3.68038 where charged, the bank gained 115$ from account 119
-Error 3‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪‫‪balance‬‬ ‫‪is‬‬ ‫‪lower‬‬ ‫‪than‬‬ ‫7260
-4: Transfer 4426 from account 963 to account 195 new account balance is 10598 new target account balance is 11780
-1‫‪‫‪: Account‬‬ ‫676 ‫‪balance‬‬ ‫‪is‬‬ ‫5645
-Bank: commission of ‬2.78877 where charged, the bank gained 126$ from account 176
-‫‪Error‬‬ ‫‪1‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫196 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-2‫‪‫‪: Account‬‬ ‫963 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫5505 after 5093$‬‬ ‫‪was‬‬ ‫‪withdrew‬‬
-3‫‪‫‪: Account‬‬ ‫195 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫5555 after 6225$‬‬ ‫‪was‬‬ ‫‪withdrew‬‬
-‫‪Error‬‬ ‫‪3‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫283 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫750 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫144 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 2‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
-‫‪Error‬‬ ‫‪4‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪‫‪balance‬‬ ‫‪is‬‬ ‫‪lower‬‬ ‫‪than‬‬ ‫5895
-Error 4‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
-1‫‪‫‪: Account‬‬ ‫958 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫888 after 8879$‬‬ ‫‪was‬‬ ‫‪withdrew‬‬
-Error 1‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
-‫‪Error‬‬ ‫‪1‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪password‬‬ ‫‪for‬‬ ‫‪account‬‬ ‫‪id‬‬ ‫676 ‫‪‫‪is‬‬ ‫‪incorrect‬‬
-Bank: commission of ‬3.5662 where charged, the bank gained 198$ from account 195
-3: Transfer 683 from account 676 to account 450 new account balance is 4962 new target account balance is 4691
-2: Transfer 861 from account 119 to account 176 new account balance is 2141 new target account balance is 5246
-‫‪Error‬‬ ‫‪2‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪password‬‬ ‫‪for‬‬ ‫‪account‬‬ ‫‪id‬‬ ‫119 ‫‪‫‪is‬‬ ‫‪incorrect‬‬
-‫‪Error‬‬ ‫‪1‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪‫‪balance‬‬ ‫‪is‬‬ ‫‪lower‬‬ ‫‪than‬‬ ‫6948
-‫‪Error‬‬ ‫‪1‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪password‬‬ ‫‪for‬‬ ‫‪account‬‬ ‫‪id‬‬ ‫119 ‫‪‫‪is‬‬ ‫‪incorrect‬‬
-Bank: commission of ‬3.59688 where charged, the bank gained 169$ from account 450
-‫‪Error‬‬ ‫‪3‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪‫‪balance‬‬ ‫‪is‬‬ ‫‪lower‬‬ ‫‪than‬‬ ‫9289
-4‫‪‫‪: Account‬‬ ‫176 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫6263 after 1017$‬‬ ‫‪was‬‬ deposited
-‫‪Error‬‬ ‫‪4‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫963 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Bank: commission of ‬3.82329 where charged, the bank gained 190$ from account 676
-3‫‪‫‪: Account‬‬ ‫958 ‫‪balance‬‬ ‫‪is‬‬ ‫888
-4‫‪‫‪: Account‬‬ ‫958 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫6320 after 5432$‬‬ ‫‪was‬‬ deposited
-3‫‪‫‪: Account‬‬ ‫963 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫7335 after 1830$‬‬ ‫‪was‬‬ deposited
-2‫‪‫‪: New Account‬‬ id is ‫196‫‪ with‬‬ ‫‪password‬‬ ‫9459 ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫5886
-1‫‪‫‪: New Account‬‬ id is ‫196‫‪ with‬‬ ‫‪password‬‬ ‫9459 ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫1282
-‫‪Error‬‬ ‫‪3‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪password‬‬ ‫‪for‬‬ ‫‪account‬‬ ‫‪id‬‬ ‫176 ‫‪‫‪is‬‬ ‫‪incorrect‬‬
-1: Transfer 6695 from account 119 to account 119 new account balance is 2141 new target account balance is 2141
-‫‪Error‬‬ ‫‪1‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪password‬‬ ‫‪for‬‬ ‫‪account‬‬ ‫‪id‬‬ ‫195 ‫‪‫‪is‬‬ ‫‪incorrect‬‬
-1: Transfer 4730 from account 958 to account 958 new account balance is 6320 new target account balance is 6320
-Error 1‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
-Error 1‫‪: Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪with‬‬ ‫‪the‬‬ ‫‪same‬‬ ‫‪id‬‬ ‫‪exists‬‬
-Bank: commission of ‬2.3951 where charged, the bank gained 151$ from account 958
-4‫‪‫‪: Account‬‬ ‫195 ‫‪balance‬‬ ‫‪is‬‬ ‫5357
-2‫‪‫‪: Account‬‬ ‫119 ‫‪balance‬‬ ‫‪is‬‬ ‫2141
-3‫‪‫‪: Account‬‬ ‫176 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫9630 after 3367$‬‬ ‫‪was‬‬ deposited
-Bank: commission of ‬2.67045 where charged, the bank gained 196$ from account 963
-‫‪Error‬‬ ‫‪4‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪‫‪balance‬‬ ‫‪is‬‬ ‫‪lower‬‬ ‫‪than‬‬ ‫8600
+1‫‪‫‪: New Account‬‬ id is ‫111‫‪ with‬‬ ‫‪password‬‬ ‫qweqwe ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫100
+1‫‪‫‪: New Account‬‬ id is ‫222‫‪ with‬‬ ‫‪password‬‬ ‫asdasd ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫200
+1‫‪‫‪: Account‬‬ ‫111 ‫‪balance‬‬ ‫‪is‬‬ ‫100
+‫‪Error‬‬ ‫‪1‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪‫‪password‬‬ ‫‪for‬‬ ‫‪account‬‬ ‫‪id‬‬ ‫222 ‫‪‫‪is‬‬ ‫‪incorrect‬‬
+1‫‪‫‪: Account‬‬ ‫111 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫130 after 30$‬‬ ‫‪was‬‬ deposited
+1‫‪‫‪: Account‬‬ ‫222 ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫160 after 40$‬‬ ‫‪was‬‬ ‫‪withdrew‬‬
+Bank: commission of ‬3.68038 where charged, the bank gained 5$ from account 111
+1‫‪‫‪: Account‬‬ ‫222 ‫‪balance‬‬ ‫‪is‬‬ ‫160
+Bank: commission of ‬2.78877 where charged, the bank gained 4$ from account 222
+1‫‪‫‪: Account‬‬ ‫111 ‫‪balance‬‬ ‫‪is‬‬ ‫125
+1: Transfer 10 from account 111 to account 222 new account balance is 115 new target account balance is 166

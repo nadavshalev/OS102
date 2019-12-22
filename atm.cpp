@@ -1,6 +1,8 @@
 
-
 #include "atm.h"
+#include <unistd.h>
+#include <bits/stdc++.h>
+
 
 //********************************************
 // function name: runATM
@@ -10,11 +12,12 @@ void* runATM(void *argin){
 	// get input arguments
 	struct atmArgs *arg;
     arg = (struct atmArgs *) argin;
-
+    ifstream op_file;
     // open file for stream
-	ifstream file(arg->filePath);
+    op_file.open(arg->filePath.c_str(), ifstream::in);
+	//ifstream file(arg->filePath);
     string str; 
-    while (getline(file, str))
+    while (getline(op_file, str))
     {
         usleep(100000);
     	// split line to arguments
@@ -31,7 +34,7 @@ void* runATM(void *argin){
 // Description: exec commands
 //********************************************
 void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID, stringstream& strLog){
-	int accID = stoi(args[1]);
+	int accID = atoi(args[1].c_str());
 	/************************* Open *************************/
 	if (cmd == "O")
 	{
@@ -43,7 +46,7 @@ void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID, stri
 			return;
 		}
 		// create new account
-		Account* acc = new Account(accID, args[2], stoi(args[3]));
+		Account* acc = new Account(accID, args[2], atoi(args[3].c_str()));
 
 		// push and resort the account's list
 		pthread_mutex_lock(&accountListLock);
@@ -52,7 +55,7 @@ void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID, stri
         pthread_mutex_unlock(&accountListLock);
 
 		pthread_mutex_lock(&logLock);
-		strLog << atmID << "‫‪‫‪: New Account‬‬ id is ‫"<< accID << "‫‪ with‬‬ ‫‪password‬‬ ‫" << args[2] << " ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫" << stoi(args[3]) << "\n";
+		strLog << atmID << "‫‪‫‪: New Account‬‬ id is ‫"<< accID << "‫‪ with‬‬ ‫‪password‬‬ ‫" << args[2] << " ‫‪and‬‬ ‫‪initial‬‬ ‫‪balance‬‬ ‫" << atoi(args[3].c_str()) << "\n";
 		pthread_mutex_unlock(&logLock);
 		return;
 	}
@@ -75,7 +78,7 @@ void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID, stri
 	/************************* Deposit ************************/
 	if (cmd == "D")
 	{
-		int amount = stoi(args[3]);
+		int amount = atoi(args[3].c_str());
 		int result = acc->deposit(amount);
 		pthread_mutex_lock(&logLock);
 		strLog << atmID << "‫‪‫‪: Account‬‬ ‫"<< accID << " ‫‪new‬‬ ‫‪balance‬‬ ‫‪is‬‬ ‫" << result << " after " << amount << "$‬‬ ‫‪was‬‬ deposited\n";
@@ -84,7 +87,7 @@ void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID, stri
 	/************************* Withdrew ************************/
 	else if (cmd == "W")
 	{
-		int amount = stoi(args[3]);
+		int amount = atoi(args[3].c_str());
 		int result = acc->withdrew(amount);
 		if (result == -1){
 			pthread_mutex_lock(&logLock);
@@ -109,14 +112,14 @@ void runCmd(string cmd, string* args, list <Account*>& accounts, int atmID, stri
 	else if (cmd == "T")
 	{
 		// check if account 2 is axist
-	    Account* acc2 = findAccount(accounts, stoi(args[3]));
+	    Account* acc2 = findAccount(accounts, atoi(args[3].c_str()));
         if(acc2 == NULL){
         	pthread_mutex_lock(&logLock);
             strLog << "‫‪Error‬‬ ‫‪" << atmID << "‫‪:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ ‫"<< accID << " ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬\n";
             pthread_mutex_unlock(&logLock);
             return;
         }
-        int amount = stoi(args[4]);
+        int amount = atoi(args[4].c_str());
 		bool result = acc->toAccount(amount, *acc2);
 		if (result){
 			pthread_mutex_lock(&logLock);

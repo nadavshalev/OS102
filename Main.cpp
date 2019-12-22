@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     pthread_mutex_init(&logLock, NULL);
     pthread_mutex_init(&accountListLock, NULL);
     terminateFlag = false;
-    int numberATM = stoi(argv[1]);
+    int numberATM = atoi(argv[1]);
     bankCount = 0;
     pthread_t bank, atms[numberATM], print2screen;
     int id[numberATM];
