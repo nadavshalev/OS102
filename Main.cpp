@@ -70,6 +70,8 @@ int main(int argc, char *argv[])
     pthread_join(bank, NULL);
     pthread_join(print2screen, NULL);
 
+    accounts.erase(accounts.begin(),accounts.end());
+    accounts.clear();
     return 0;
 }
 

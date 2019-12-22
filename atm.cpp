@@ -25,6 +25,7 @@ void* runATM(void *argin){
         string cmd = args[0];
         // exec cmd
         runCmd(cmd, args, (*arg->accounts), (*arg->atmID), (*arg->strLog));
+        delete[] args;
     }
     pthread_exit(NULL);
 }
